@@ -1,0 +1,1 @@
+INSERT INTO `dede_qiandao` VALUES('1','admin','10','1474945678','3','100','');

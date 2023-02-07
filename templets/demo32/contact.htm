@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<!--360默认急速模式打开-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="/skin/css/cui.css" />
+<link rel="stylesheet" href="/skin/css/style.css" />
+<link rel="stylesheet" href="/skin/css/less.css" />
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div class="c"></div>
+<div id="bd">
+  <div id="ban-in" style="background-image:url(/skin/images/14415953225349.jpg)">
+    <div class="ban-bg"></div>
+  </div>
+  <div class="row4 fix">
+    <div class="wp">
+      <div class="tit-i">
+        <h3>联系我们</h3>
+        <h5><span>contact</span> zhizhuxiu</h5>
+      </div>
+      <div class="contact-l">
+        <ul class="ul-contact">
+          <li class="li1">唐山市开平区古镇豫园大成汇三层</li>
+          <li class="li2"><a href="tel:17713164411">177 1316 4411 (咨询) 
+            <a href="tel:03158558855">0315 855 8855 (咨询)</a></li>
+          <li class="li3"><a href="chenze523@163.com">chenze523@163.com</a></li>
+        </ul>
+      </div>
+      <div class="contact-r">
+        <form action="/plus/diy.php" class="contact-form" enctype="multipart/form-data" method="post">
+          <input type="hidden" name="action" value="post" />
+          <input type="hidden" name="diyid" value="1" />
+          <input type="hidden" name="do" value="2" />
+          <div class="">
+            <input type="text" class="inp l" name="name" id="name" placeholder="您的姓名">
+            <input type="text" class="inp r" name="tel" id="tel" placeholder="您的联系方式">
+          </div>
+          <textarea cols="30" rows="10" name="nr" id="nr"></textarea>
+          <input type="hidden" name="dede_fields" value="name,text;tel,text;nr,text" />
+          <input type="hidden" name="dede_fieldshash" value="1150bc325e255641e2db4115e8c9c51f" />
+          <input type="submit" value="提交您的需求" class="sub" id="sub">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="map">
+    <div class="map-s"> <a href="javascript:void(0);" class="btn"><em></em>点击展开地图</a> </div>
+    <div class="map-pop map-pop-big"> <a href="javascript:void(0);" class="btn-down"></a>
+      <div class="map-bg1"></div>
+      <div class="map-bg2"></div>
+      <div id="map" class="map-c" style="width:100%;height:100%;"></div>
+    </div>
+  </div>
+</div>
+<!-- end #bd -->
+<div class="c"></div>
+<!-- begin #fd --> 
+{dede:include filename="footer.htm"/} 
+<script type="text/javascript" src="/skin/js/jquery.js"></script> 
+<script type="text/javascript" src="/skin/js/lib.js"></script> 
+<script>
+$('.map .btn').click(function(){
+$('.map-pop').show();
+$(this).parents('.map').addClass('map-big');
+var winW = $(window).width();
+var winH = $(window).height();
+if(winW < 768){
+$('.map-pop').height($(window).height()-50-80);
+$('.map-big').height($(window).height()-50-80);
+$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+}else{
+
+$('.map-pop').height($(window).height()-344-101);
+$('.map-big').height($(window).height()-344-101);
+$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+}
+initMap();
+})
+$('.map .btn-down').click(function(){
+$('.map-pop').hide();
+$(this).parents('.map').removeClass('map-big');
+$('.map').height('107');
+})
+</script> 
+<script type="text/javascript" src="/skin/js/ditu.js"></script> 
+<script type="text/javascript" src="/skin/js/map.js"></script>
+</body>
+</html>

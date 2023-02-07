@@ -1,0 +1,28 @@
+<div id="hd">
+  <div class="wp">
+    <div class="logo"><a href="/"><img src="/skin/images/logo.png"width="300" height="70" alt=""></a></div>
+    <div id="nav">
+      <ul>
+        {dede:channel type='top' row='10' currentstyle="
+        <li><a href='~typelink~' ~rel~ class='mycur'><span>~typename~</span></a></li>
+        "}
+        <li><a href='[field:typeurl/]'>[field:typename/]</a></li>
+        {/dede:channel}
+      </ul>
+    </div>
+    <div class="tel"><h2><b>0315-8558855</b></h2></div>
+  </div>
+</div>
+<!-- end #hd -->
+<div class="c"></div>
+<div id="m-hd"> <a href="/" class="m-logo"><img src="/skin/images/logo.png" alt=""></a>
+  <div class="m-trigger"></div>
+  <ul class="m-nav">
+    <li><a href="/" class="v1">首页 </a></li>
+    {dede:channel type='top' row='10' currentstyle="
+    <li><a href='~typelink~' ~rel~ class='v1'><span>~typename~</span></a></li>
+    "}
+    <li><a href='[field:typeurl/]' class="v1">[field:typename/]</a></li>
+    {/dede:channel}
+  </ul>
+</div>

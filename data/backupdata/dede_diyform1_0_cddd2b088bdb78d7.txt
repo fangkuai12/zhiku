@@ -1,0 +1,1 @@
+INSERT INTO `dede_diyform1` VALUES('1','0','符绍明','13976785512','www.zhikulego.com 做最好的织梦模板');

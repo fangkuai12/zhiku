@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<!--360默认急速模式打开-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="/skin/css/cui.css" />
+<link rel="stylesheet" href="/skin/css/style.css" />
+<link rel="stylesheet" href="/skin/css/less.css" />
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div class="c"></div>
+<div id="bd">
+  <div id="ban-in" style="background-image:url(/skin/images/14415956337556.jpg)">
+    <div class="ban-bg"></div>
+  </div>
+  <div class="wp">
+    <div class="tit-i">
+      <h3>课程体系</h3>
+      <h5><span>case</span> OF US</h5>
+    </div>
+    <div class="sub-nav">
+      <ul>
+        {dede:channel type='son' row='10' currentstyle="
+        <li><a href='~typelink~' ~rel~ class='mycur'><span>~typename~</span></a></li>
+        "}
+        <li><a href='[field:typeurl/]'>[field:typename/]</a></li>
+        {/dede:channel}
+      </ul>
+    </div>
+    <div class="c"></div>
+    <ul class="ul-case">
+      {dede:list pagesize ='12'}
+      <li>
+        <div class="block">
+          <div class="pic"><img src="[field:picname/]" alt="[field:title/]"></div>
+          <div class="txt"> <a href="[field:arcurl/]" style="width:100%;height:100%;display:block;"> <b></b>
+            <div class="pad">
+              <h5>[field:typename/]</h5>
+              <em></em>
+              <h3>[field:title/]</h3>
+              <span class="more">课程详情</span> </div>
+            </a> </div>
+        </div>
+      </li>
+      {/dede:list}
+    </ul>
+    <div class="c"></div>
+    <div class="dede_pages">
+      <ul class="pagelist">
+        {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- end #bd -->
+<div class="c"></div>
+<!-- begin #fd --> 
+{dede:include filename="footer.htm"/} 
+<script type="text/javascript" src="/skin/js/jquery.js"></script> 
+<script type="text/javascript" src="/skin/js/lib.js"></script> 
+<script>
+var isMobile;
+function mobileCheck(){
+isMobile  = $('#m-hd').is(':visible');
+}
+
+$(window).resize(function(event) {
+mobileCheck();
+$('.ul-case li').removeClass('on');
+if(isMobile){
+$('.ul-case').attr('id','ul-mobile');
+}else{
+$('.ul-case').attr('id','ul-pc');
+}
+});
+
+$('body').on('mouseenter mouseleave', '#ul-pc li', function(){
+$(this).toggleClass('on');
+})
+
+$('body').on('click', '#ul-mobile li', function(){
+$(this).toggleClass('on');
+})
+
+$(window).load(function(){
+$(window).trigger('resize');
+})
+</script>
+</body>
+</html>
